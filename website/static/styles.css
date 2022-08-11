@@ -1,0 +1,9 @@
+#search-bar {
+    width: 50%;
+    margin: auto;
+}
+
+ol.steps {
+    display: inline-block;
+    text-align: left;
+}
