@@ -3,7 +3,7 @@
     margin: auto;
 }
 
-ol.steps {
+ol.steps, ul.notes {
     display: inline-block;
     text-align: left;
 }
