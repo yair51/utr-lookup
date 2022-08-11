@@ -2,3 +2,4 @@ venv/
 cookies.pickle
 .env
 website/__pycache__
+__pycache__/
