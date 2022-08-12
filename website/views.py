@@ -13,12 +13,6 @@ def home():
     return render_template("index.html", title="Home")
 
 
-@views.route('/result')
-def result():
-    """Displays search results"""
-    return render_template("result.html", title="Result")
-
-
 @views.route('/search')
 def search():
     """calls UTR API to search player"""
@@ -32,4 +26,4 @@ def search():
         utr_login()
         results = utr_search(query)
 
-    return render_template("result.html", results=results)
+    return render_template("result.html", results=results, title="Results")
