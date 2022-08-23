@@ -4,3 +4,6 @@ cookies.pickle
 website/__pycache__
 __pycache__/
 package.json
+players_no_dups.csv
+players.csv
+.DS_Store

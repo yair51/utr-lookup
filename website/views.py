@@ -10,20 +10,21 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET'])
 def home():
     """Displays home screen"""
+    flash("Sorry, were gone", category="error")
     return render_template("index.html", title="Home")
 
 
-@views.route('/search')
-def search():
-    """calls UTR API to search player"""
+# @views.route('/search')
+# def search():
+#     """calls UTR API to search player"""
 
-    # Submit search query to UTR
-    query = request.args.get("query")
-    results = utr_search(query)
+#     # Submit search query to UTR
+#     query = request.args.get("query")
+#     results = utr_search(query)
 
-    # Login to UTR and rerun search query if not authenticated
-    if not is_authenticated(results):
-        utr_login()
-        results = utr_search(query)
+#     # Login to UTR and rerun search query if not authenticated
+#     if not is_authenticated(results):
+#         utr_login()
+#         results = utr_search(query)
 
-    return render_template("result.html", results=results, title="Results")
+#     return render_template("result.html", results=results, title="Results")

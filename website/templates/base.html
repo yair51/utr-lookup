@@ -30,13 +30,34 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li> -->
             </ul>
-            <form class="d-flex" role="search" action="/search">
+            <!-- <form class="d-flex" role="search" action="/search">
               <input class="form-control me-2" type="search" name="query" placeholder="Player's name" aria-label="Search">
               <button class="btn btn-outline-light" type="submit">Search</button>
-            </form>
+            </form> -->
           </div>
         </div>
       </nav>
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        'error' %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          Due to legal reasons, I have decided to shut down this website. To see my code for this website on Github, <a href="https://github.com/yair51/utr-lookup" class="alert-link">click here</a>.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <!-- <div class="alert alert-danger alter-dismissable fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endif %} {% endfor %} {% endif %} {% endwith %} 
     <main class="container-fluid text-center {% block classes %}{% endblock %}">{% block content %}{% endblock %}</main>
     <footer class="text-center bg-dark py-5 mt-4 text-light">
       <p>Contact: <a style="color: rgb(255, 255, 255);" href="mailto: utrlookup@gmail.com">utrlookup@gmail.com</a></p>
